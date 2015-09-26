@@ -1,34 +1,36 @@
 package com.hackcmu.cmfud;
 
-import android.content.Intent;
-import android.os.Handler;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class AvailabilityActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_availability);
         getSupportActionBar().hide();
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(MainActivity.this, AvailabilityActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        }, 2000);
+
+        ArrayList<Restaurant> restaurants = new ArrayList<>();
+        restaurants.add(new Restaurant("The Underground", Color.rgb(78, 0, 0), 830, 2400, 0, 0));
+        restaurants.add(new Restaurant("Schatz Dining Room", Color.rgb(240, 106, 79), 1030, 1430, 0, 0));
+
+        ListView listView = (ListView) findViewById(R.id.availability_listview);
+        CustomAdapter adapter = new CustomAdapter(this, R.layout.restaurant_item, restaurants);
+        listView.setAdapter(adapter);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_availability, menu);
         return true;
     }
 
