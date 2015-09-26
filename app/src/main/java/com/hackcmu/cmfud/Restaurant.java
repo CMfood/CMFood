@@ -6,16 +6,12 @@ public class Restaurant {
     int mColor;
     int mStartTime;
     int mEndTime;
-    int mLeftPadding;
-    int mWidth;
 
-    public Restaurant(String name, int color, int startTime, int endTime, int leftPad, int width) {
+    public Restaurant(String name, int color, int startTime, int endTime) {
         mName = name;
         mColor = color;
         mStartTime = startTime;
         mEndTime = endTime;
-        mLeftPadding = leftPad;
-        mWidth = width;
     }
 
     public String getName() {
@@ -44,6 +40,8 @@ public class Restaurant {
             return (int)(difference * (138.0 / 350.0));
         } else if (difference <= 1700) {
             return (int)(difference * (137.0 / 350.0));
+        }  else if (difference <= 2000) {
+            return (int)(difference * (135.0 / 350.0));
         }
         return 0;
     }

@@ -79,7 +79,7 @@ public class CustomAdapter extends ArrayAdapter<Restaurant>{
                             @Override
                             public void run() {
                                 GregorianCalendar calendar = new GregorianCalendar();
-                                int now = calendar.get(Calendar.HOUR_OF_DAY) * 100;
+                                int now = calendar.get(Calendar.HOUR_OF_DAY) * 100 + calendar.get(Calendar.MINUTE);
                                 elapsedTimeView.setLayoutParams(new RelativeLayout.LayoutParams(
                                         Restaurant.determinePosition(now) + 5,
                                         RelativeLayout.LayoutParams.FILL_PARENT));

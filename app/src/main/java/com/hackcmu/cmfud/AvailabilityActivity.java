@@ -19,8 +19,11 @@ public class AvailabilityActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         ArrayList<Restaurant> restaurants = new ArrayList<>();
-        restaurants.add(new Restaurant("The Underground", Color.rgb(78, 0, 0), 830, 2400, 0, 0));
-        restaurants.add(new Restaurant("Schatz Dining Room", Color.rgb(240, 106, 79), 1030, 1430, 0, 0));
+        restaurants.add(new Restaurant("Rashid Auditorium", Color.rgb(78, 0, 0), 830, 2400));
+        restaurants.add(new Restaurant("The Underground", Color.rgb(240, 106, 79), 830, 2400));
+        restaurants.add(new Restaurant("Schatz Dining Room", Color.rgb(237, 28, 36), 1030, 1430));
+        restaurants.add(new Restaurant("Entropy", Color.rgb(237, 20, 91), 1000, 2700));
+        restaurants.add(new Restaurant("The Exchange", Color.rgb(242, 101, 34), 1000, 1430));
 
         ListView listView = (ListView) findViewById(R.id.availability_listview);
         CustomAdapter adapter = new CustomAdapter(this, R.layout.restaurant_item, restaurants);
