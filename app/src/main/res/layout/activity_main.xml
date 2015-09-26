@@ -7,4 +7,12 @@
         android:layout_height="match_parent"
         android:background="@color/cmu_red"/>
 
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:id="@+id/imageView"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:background="@mipmap/ic_launcher" />
+
 </RelativeLayout>

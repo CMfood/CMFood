@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hackcmu.cmfud" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,6 +25,10 @@
         <activity
             android:name=".RestaurantActivity"
             android:label="@string/title_activity_restaurant" >
+        </activity>
+        <activity
+            android:name=".SeatsActivity"
+            android:label="@string/title_activity_seats" >
         </activity>
     </application>
 

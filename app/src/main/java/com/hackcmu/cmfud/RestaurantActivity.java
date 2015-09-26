@@ -1,5 +1,6 @@
 package com.hackcmu.cmfud;
 
+import android.content.Intent;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -37,7 +38,8 @@ public class RestaurantActivity extends AppCompatActivity {
         seatsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(RestaurantActivity.this, SeatsActivity.class);
+                startActivity(intent);
             }
         });
     }
