@@ -1,11 +1,13 @@
 package com.hackcmu.cmfud;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -24,10 +26,22 @@ public class AvailabilityActivity extends AppCompatActivity {
         restaurants.add(new Restaurant("Schatz Dining Room", Color.rgb(237, 28, 36), 1030, 1430));
         restaurants.add(new Restaurant("Entropy", Color.rgb(237, 20, 91), 1000, 2700));
         restaurants.add(new Restaurant("The Exchange", Color.rgb(242, 101, 34), 1000, 1430));
+        restaurants.add(new Restaurant("Tartans Pizza", Color.rgb(245, 152, 157), 1700, 2300));
 
         ListView listView = (ListView) findViewById(R.id.availability_listview);
-        CustomAdapter adapter = new CustomAdapter(this, R.layout.restaurant_item, restaurants);
+        final CustomAdapter adapter = new CustomAdapter(this, R.layout.restaurant_item, restaurants);
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Restaurant restaurant = adapter.getItem(position);
+
+                Intent intent = new Intent(AvailabilityActivity.this, RestaurantActivity.class);
+                intent.putExtra("RESTAURANT", restaurant);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

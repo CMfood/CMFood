@@ -1,6 +1,8 @@
 package com.hackcmu.cmfud;
 
-public class Restaurant {
+import java.io.Serializable;
+
+public class Restaurant implements Serializable {
 
     String mName;
     int mColor;
