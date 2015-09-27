@@ -6,4 +6,5 @@
     <string name="title_activity_availability">What\'s Open</string>
     <string name="title_activity_restaurant">RestaurantActivity</string>
     <string name="title_activity_seats">SeatsActivit</string>
+    <string name="title_activity_lines">LinesActivity</string>
 </resources>

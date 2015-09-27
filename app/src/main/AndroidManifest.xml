@@ -30,6 +30,10 @@
             android:name=".SeatsActivity"
             android:label="@string/title_activity_seats" >
         </activity>
+        <activity
+            android:name=".LinesActivity"
+            android:label="@string/title_activity_lines" >
+        </activity>
     </application>
 
 </manifest>

@@ -30,7 +30,8 @@ public class RestaurantActivity extends AppCompatActivity {
         linesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(RestaurantActivity.this, LinesActivity.class);
+                startActivity(intent);
             }
         });
 
